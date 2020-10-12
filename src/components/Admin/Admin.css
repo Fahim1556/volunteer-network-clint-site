@@ -1,0 +1,11 @@
+.height-part{
+    height: 90vh;
+}
+
+.shadow{
+    border-radius: 15px !important;
+}
+
+.bg-part{
+    background-color: #ffffff;
+}

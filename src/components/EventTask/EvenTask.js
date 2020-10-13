@@ -19,8 +19,8 @@ const EvenTask = () => {
         fetch(`https://floating-earth-62949.herokuapp.com/deleteTask/${id}`,{method:'DELETE'})
         .then(res=> res.json())
         .then(data=> {
-            const exist = userTask.filter(user =>user._id != deletedId)
-            setUserTask(exist)
+            const existTask = userTask.filter(user =>user._id != deletedId)
+            setUserTask(existTask)
         })
     }
 
@@ -42,7 +42,7 @@ const EvenTask = () => {
                                 <div className="col-md-5">
                                     <img height='190' width='190' src={task.image} alt=""/>
                                 </div>
-                                <div className="col-md-7 px-5 py-4">
+                                <div className="col-md-7 px-5 py-2">
                                             <h4>{task.task}</h4>
                                             <h5>{task.date}</h5>
                                             <p className='lead'>{task.description}</p>

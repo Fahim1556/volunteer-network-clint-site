@@ -5,9 +5,9 @@ import './Admin.css'
 const Admin = () => {
     const[users,setUsers] = useState ([])
     useEffect(() => {
-        fetch('https://floating-earth-62949.herokuapp.com/users')
+        fetch('https://floating-earth-62949.herokuapp.com/allUser')
         .then(res=>res.json())
-        .then(data=> setUsers(data))
+        .then(data=> setAllUser(data))
     },[])
 
     const deleteTask =(id)=>{
@@ -15,8 +15,8 @@ const Admin = () => {
         fetch(`https://floating-earth-62949.herokuapp.com/deleteTask/${id}`,{method:'DELETE'})
         .then(res=> res.json())
         .then(data=> {
-            const endTask = users.filter(user =>user._id != deletedId)
-            setUsers(endTask)
+            const existTask = users.filter(user =>user._id != deletedId)
+            setUsers(existTask)
         })
     }
 
@@ -24,7 +24,7 @@ const Admin = () => {
         <div>
               
         <div className='container'>
-        <div className="row py-5">
+        <div className="row py-4">
             <div className="col-md-3">
                 <img height='50' src="https://i.ibb.co/GQYn4Tp/logo.png" alt="" />
             </div>

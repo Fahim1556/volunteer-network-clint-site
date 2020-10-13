@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Admin.css'
 
 const Admin = () => {
-    const[users,setUsers] = useState ([])
+    const[allUser, setAllUser] = useState ([])
     useEffect(() => {
         fetch('https://floating-earth-62949.herokuapp.com/allUser')
         .then(res=>res.json())
@@ -15,8 +15,8 @@ const Admin = () => {
         fetch(`https://floating-earth-62949.herokuapp.com/deleteTask/${id}`,{method:'DELETE'})
         .then(res=> res.json())
         .then(data=> {
-            const existTask = users.filter(user =>user._id != deletedId)
-            setUsers(existTask)
+            const existTask = allUser.filter(user =>user._id != deletedId)
+            setAllUser(existTask)
         })
     }
 
@@ -67,7 +67,7 @@ const Admin = () => {
                         </thead>
                         <tbody>
                             
-                            {users.map(user=>
+                            {allUser.map(user=>
                             <tr key={user._id} >
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>

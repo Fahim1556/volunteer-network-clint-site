@@ -21,6 +21,7 @@ const VolunterCard = () => {
              {volunteerData.map(data=>
                 <div onClick={()=> handleRedirect(data._id)} key={data._id} className="col-md-3 ">
                     <div className="card btn ">
+                    
                         <img className="card-img" src={data.image} height='200' alt=""/>
                             <div className="card-body bg-primary rounded">
                                 <p className="card-title text-center text-light">{data.task}</p>

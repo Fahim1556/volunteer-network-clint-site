@@ -5,14 +5,14 @@ import './Admin.css'
 const Admin = () => {
     const[users,setUsers] = useState ([])
     useEffect(() => {
-        fetch('https://blooming-earth-11428.herokuapp.com/users')
+        fetch('https://floating-earth-62949.herokuapp.com/users')
         .then(res=>res.json())
         .then(data=> setUsers(data))
     },[])
 
     const deleteTask =(id)=>{
         const deletedId = id
-        fetch(`https://blooming-earth-11428.herokuapp.com/deleteTask/${id}`,{method:'DELETE'})
+        fetch(`https://floating-earth-62949.herokuapp.com/deleteTask/${id}`,{method:'DELETE'})
         .then(res=> res.json())
         .then(data=> {
             const endTask = users.filter(user =>user._id != deletedId)

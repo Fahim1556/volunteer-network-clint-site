@@ -8,7 +8,7 @@ const EvenTask = () => {
     const [userTask, setUserTask] = useState([])
     const [loginUser,setLoginUser] =useContext (loginContexApi)
     useEffect(() =>{
-        fetch(`https://floating-earth-62949.herokuapp.com/getUserTask?email=${loginUser.email}`)
+        fetch(`https://blooming-earth-11428.herokuapp.com/getUserTask?email=${loginUser.email}`)
         .then(res=>res.json())
         .then(data=> setUserTask(data))
     },[])
@@ -16,7 +16,7 @@ const EvenTask = () => {
 
     const deleteTask =(id)=>{
         const deletedId = id
-        fetch(`https://floating-earth-62949.herokuapp.com/deleteTask/${id}`,{method:'DELETE'})
+        fetch(`https://blooming-earth-11428.herokuapp.com/deleteTask/${id}`,{method:'DELETE'})
         .then(res=> res.json())
         .then(data=> {
             const existTask = userTask.filter(user =>user._id != deletedId)

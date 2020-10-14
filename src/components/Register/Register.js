@@ -10,7 +10,7 @@ const Register = () => {
     const {key} =useParams()
 
     useEffect(() =>{
-        fetch(`https://floating-earth-62949.herokuapp.com/singleTask?id=${key}`)
+        fetch(`https://blooming-earth-11428.herokuapp.com/singleTask?id=${key}`)
         .then(res=>res.json())
         .then(data=> setSelectedTask(data))
     },[])
@@ -24,7 +24,7 @@ const Register = () => {
         const userData = {...loginUser,...selectedTask,description:description, date:date}
 
 
-        fetch("https://floating-earth-62949.herokuapp.com/userTask",{
+        fetch("https://blooming-earth-11428.herokuapp.com/userTask",{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(userData)

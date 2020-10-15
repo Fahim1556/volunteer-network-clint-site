@@ -6,7 +6,7 @@ import './Home.css';
 const VolunterCard = () => {
     const [volunteerData, setVolunteerData] = useState([])
     useEffect(() => {
-        fetch('https://blooming-earth-11428.herokuapp.com/allTasks')
+        fetch('https://floating-earth-62949.herokuapp.com/allTasks')
             .then(res => res.json())
             .then(data => setVolunteerData(data))
     }, [])

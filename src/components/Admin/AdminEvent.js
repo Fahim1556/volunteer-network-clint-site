@@ -9,7 +9,7 @@ const AdminEvent = () => {
 
         const data = {task:name,image:'https://i.ibb.co/6t19x95/download-1.jpg'}
 
-        fetch("https://blooming-earth-11428.herokuapp.com/addEvent",{
+        fetch("https://floating-earth-62949.herokuapp.com/addEvent",{
             method:"POST",
             headers:{"Content-Type":"application/json"},
             body:JSON.stringify(data)
